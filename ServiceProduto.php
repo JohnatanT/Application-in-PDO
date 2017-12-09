@@ -36,8 +36,13 @@ class ServiceProduto{
 		return $ret;
 	}
 
-	public function delete(){
-
+	public function delete(int $id){
+		$query = "DELETE from 'produto' WHERE id = ?";
+		$stmt = $this->db->stmt_init();
+		$stmt->prepare($query);
+		$stmt->bind_param("i",$id);
+		$ret = $stmt->execute();
+		return $ret;
 	}
 
 

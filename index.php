@@ -19,6 +19,7 @@ $servico = new ServiceProduto($db,$produto);
 $servico->list();
 $servico->save();
 $servico->update();
+$servico->delete(4);
 
 
 
