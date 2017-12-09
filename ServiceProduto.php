@@ -36,13 +36,22 @@ class ServiceProduto{
 		return $ret;
 	}
 
-	public function delete(int $id){
+	public function delete(int $id){//Metdodo de Deletar
 		$query = "DELETE from 'produto' WHERE id = ?";
 		$stmt = $this->db->stmt_init();
 		$stmt->prepare($query);
 		$stmt->bind_param("i",$id);
 		$ret = $stmt->execute();
 		return $ret;
+	}
+
+	public function find($id){//Metodo de Procurar
+		$query = "SELECT * FROM 'produto' WHERE id = ?";
+		$stmt = $this->db->stmt_init();
+		$stmt->prepare($query);
+		$stmt->bind_param("i",$id);
+		$stmt->execute();
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
 	}
 
 

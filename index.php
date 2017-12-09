@@ -16,10 +16,12 @@ $produto->setId(4)->setName("Curso de HTML")->setDesc("Curso De HTML com foco na
 $servico = new ServiceProduto($db,$produto);
 
 //Funções do CRUD
-$servico->list();
-$servico->save();
-$servico->update();
-$servico->delete(4);
+
+$servico->list();   //Listar
+$servico->save();	//Inserir
+$servico->update();	//Update
+$servico->delete(4);//Deletar
+$servico->find(3);	//Procurar
 
 
 
